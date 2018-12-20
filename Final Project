@@ -69,6 +69,24 @@ _.drop = function(array, n){
   let droppedArray = array.slice(n, array.length);
   return droppedArray;        
     };
+dropWhile(array, predicate) {
+let dropNumber = array.findIndex(function(element, index) {
+!(predicate(element, index, array))
+return index;
+});
+let droppedArray = this.drop(array, dropNumber);
+return droppedArray;
+}
+chunk (array, size = 1){
+        let arrayChunks = [];
+        for (let i = 0; i < array.length; i+size ){ 
+        let arrayChunk = array.slice();  
+        arrayChunks.push(arrayChunk);  
+      }
+        return arrayChunks
+      },
+};
+
 
 
 
