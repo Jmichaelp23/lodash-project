@@ -51,24 +51,22 @@ const _ = {
       invertedObject = {originalValue: key}
     }
     return invertedObject;
-  }
- findKey (object, predicate) {
+  },
+findKey (object , predicate) {
     for (let key in object) {
       if (predicate(object[key])) {
         return key;
           } 
         }
       },
-_.drop = function(array, n){
-
-  if(n === 'undefined')
+_drop = function(array, n){
+ if(n === 'undefined')
   {
     n = 1;
   }
-  
   let droppedArray = array.slice(n, array.length);
   return droppedArray;        
-    };
+    },
 dropWhile(array, predicate) {
 let dropNumber = array.findIndex(function(element, index) {
 !(predicate(element, index, array))
@@ -77,7 +75,7 @@ return index;
 let droppedArray = this.drop(array, dropNumber);
 return droppedArray;
 }
-chunk (array, size = 1){
+_.chunk (array, size = 1){
         let arrayChunks = [];
         for (let i = 0; i < array.length; i+size ){ 
         let arrayChunk = array.slice();  
@@ -86,9 +84,6 @@ chunk (array, size = 1){
         return arrayChunks
       },
 };
-
-
-
 
 // Do not write or modify code below this line.
 module.exports = _;
